@@ -10,6 +10,18 @@ import './styles.css'
 
 function CheckoutSideMenu() {
     const context = useContext(ShoppingCartContext);
+    //sign out
+    const signOut = localStorage.getItem('sign-out')
+    const parsedSignOut = JSON.parse(signOut)
+    const isUserSignOut = context.signOut || parsedSignOut
+    //account
+    const account = localStorage.getItem('account')
+    const parsedAccount = JSON.parse(account)
+
+    //has account
+    const noAccountInLocalStorage = parsedAccount ? Object.keys(parsedAccount).length === 0 : true
+    const noAccountInLocalState = context.account ? Object.keys(context.account).length === 0 : true
+    const hasUserAnAccount = !noAccountInLocalState || !noAccountInLocalStorage
 
     const handleDelete = (id) => {
         const filterProducts = context.cartProducts.filter((product) => product.id != id)
@@ -31,7 +43,7 @@ function CheckoutSideMenu() {
 
     return (
         <aside
-            className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} checkout-side-menu flex flex-col fixed right-0 border border-gray-200 rounded-lg bg-white`}
+            className={`${hasUserAnAccount && !isUserSignOut && context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} checkout-side-menu flex flex-col fixed right-0 border border-gray-200 rounded-lg bg-white`}
         >
             <div className='flex justify-between items-center p-4'>
                 <h2 className='font-medium text-xl'>My Order</h2>
