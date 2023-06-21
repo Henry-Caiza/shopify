@@ -119,8 +119,10 @@ function MyInformation() {
                             </div>
                         </form>
                     </div>
-                    <div className="flex justify-between mt-4 z-10">
-                        <div className='w-3/5 mx-auto'>
+                    <div className="flex mt-4 z-10 border px-16 py-8">
+                        <p className='w-1/4 font-semibold'>Pagar con:</p>
+                        <div className='w-3/4 mx-auto'>
+
                             <PayPalScriptProvider options={{ 'client-id': 'AYrVyRxmATzQHa5CFXIxDkpbNcE2F5MS_Nf5-_b3fpbS67HMM-YshABgT0IBDaYqI6W5_MQNriLnxpQB' }}>
                                 <PayPalButtons
                                     createOrder={(data, actions) => {
@@ -145,13 +147,7 @@ function MyInformation() {
                                     onApprove={(data, actions) => onApprove(data, actions)}
                                     onError={error => console.log(error)}
                                     onCancele={data => console.log(data)}
-                                // style={{
-                                //     layout: 'horizontal',
-                                //     label: 'pay',
-                                //     color: 'silver',
-                                //     shape: 'pill',
-                                //     tagline: false
-                                // }}
+
                                 />
                             </PayPalScriptProvider>
                         </div>

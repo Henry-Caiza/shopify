@@ -13,7 +13,7 @@ import { MyInformation } from '../Information'
 import { NotFound } from '../NotFound'
 import { Navbar } from '../../Components/Navbar'
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
-import { Footer } from '../../Components/Footer'
+
 import './App.css'
 
 const AppRoutes = () => {
@@ -64,7 +64,7 @@ function App() {
         <AppRoutes />
         <Navbar />
         <CheckoutSideMenu />
-        <Footer />
+
       </BrowserRouter>
     </ShoppingCartProvider>
   )
