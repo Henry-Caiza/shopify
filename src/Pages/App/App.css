@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.inputBox span {
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.inputBox input {
+    transition: 0.5s;
+
+}
+
+.inputBox input::placeholder {
+    color: transparent;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    color: #009CDE;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 12px;
+    padding: 0 10px;
+    background-color: white;
+
+}

@@ -9,6 +9,7 @@ import './styles.css'
 
 
 function CheckoutSideMenu() {
+
     const context = useContext(ShoppingCartContext);
     //sign out
     const signOut = localStorage.getItem('sign-out')
@@ -35,11 +36,13 @@ function CheckoutSideMenu() {
             totalProducts: context.cartProducts.length,
             totalPrice: totalPrice(context.cartProducts)
         }
-        context.setOrder([...context.order, orderToAdd])
-        context.setCartProducts([])
+        // context.setOrder([...context.order, orderToAdd])
+        context.setPreOrder([...context.order, orderToAdd])
+        //context.setCartProducts([])
         context.setSearchByTitle('')
         context.closeCheckoutSideMenu(true)
     }
+
 
     return (
         <aside
@@ -70,10 +73,10 @@ function CheckoutSideMenu() {
                     <span className='font-semibold text-lg pt-3'>Total: </span>
                     <span className='font-semibold text-lg'>${totalPrice(context.cartProducts)}</span>
                 </p>
-                <Link to='/my-orders/last'>
+                <Link to='/my-order/my-information'>
                     <button
                         className='w-full bg-orange-500 text-white  my-0 rounded-full py-1 hover:bg-orange-600'
-                        onClick={() => handleCheckout()}>Checkout</button>
+                        onClick={() => handleCheckout()}>Go to Checkout</button>
                 </Link>
             </div>
 

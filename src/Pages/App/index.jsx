@@ -9,10 +9,11 @@ import { MyAccount } from '../MyAccount'
 import { MyOrder } from '../MyOrder'
 import { MyOrders } from '../MyOrders'
 import { SignIn } from '../SignIn'
+import { MyInformation } from '../Information'
 import { NotFound } from '../NotFound'
 import { Navbar } from '../../Components/Navbar'
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
-
+import { Footer } from '../../Components/Footer'
 import './App.css'
 
 const AppRoutes = () => {
@@ -32,6 +33,10 @@ const AppRoutes = () => {
   const hasUserAnAccount = !noAccountInLocalState || !noAccountInLocalStorage
   const isUserSignOut = context.signOut || parsedSignOut
 
+  let index = context.order?.length
+
+  console.log(index);
+
   let routes = useRoutes([
     { path: '/', element: hasUserAnAccount && !isUserSignOut ? <Home /> : <Navigate replace to={'/sign-in'} /> },
     { path: '/clothes', element: hasUserAnAccount && !isUserSignOut ? <Home /> : <Navigate replace to={'/sign-in'} /> },
@@ -43,6 +48,7 @@ const AppRoutes = () => {
     { path: '/my-order', element: <MyOrder /> },
     { path: '/my-orders', element: <MyOrders /> },
     { path: '/sign-in', element: <SignIn /> },
+    { path: '/my-order/my-information', element: <MyInformation /> },
     { path: '/my-orders/last', element: <MyOrder /> },
     { path: '/my-orders/:id', element: <MyOrder /> },
     { path: '/*', element: <NotFound /> },
@@ -58,6 +64,7 @@ function App() {
         <AppRoutes />
         <Navbar />
         <CheckoutSideMenu />
+        <Footer />
       </BrowserRouter>
     </ShoppingCartProvider>
   )

@@ -6,7 +6,7 @@ import './styles.css'
 
 function ProductDetail() {
     const context = useContext(ShoppingCartContext);
-    console.log(context.productToShow);
+    //console.log(context.productToShow);
     return (
         <aside
             className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail flex flex-col fixed right-0 border border-gray-400 rounded-lg bg-white`}

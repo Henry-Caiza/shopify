@@ -79,7 +79,7 @@ function Navbar() {
         }
     }
     return (
-        <nav className='w-full py-5 px-8 text-sm font-sans flex justify-between items-center fixed z-10 top-0 bg-white border border-gray-200'>
+        <nav className='w-full py-5 px-8 text-sm font-sans flex justify-between items-center fixed z-50 top-0 bg-white border border-gray-200'>
             <ul className='flex items-center gap-4'>
                 <li className='font-semibold text-lg '>
                     <NavLink

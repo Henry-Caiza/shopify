@@ -43,7 +43,7 @@ function Home() {
             <input type="text" placeholder="Search a product" className="border border-gray-400 rounded-full w-96 px-4 py-2 mb-8 focus:outline-gray-400"
                 onChange={(event) => context.setSearchByTitle(event.target.value)}
             />
-            <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
+            <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg pb-20">
                 {renderView()}
             </div>
             <ProductDetail></ProductDetail>

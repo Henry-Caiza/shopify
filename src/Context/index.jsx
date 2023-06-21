@@ -51,6 +51,9 @@ function ShoppingCartProvider({ children }) {
     //Shopping Cart - Order
     const [order, setOrder] = useState([])
 
+    //Cart - PrevOrder
+    const [preOrder, setPreOrder] = useState([])
+
     //Get Products
     const [items, setItems] = useState(null)
     const [filteredItems, setFilteredItems] = useState(null)
@@ -117,6 +120,8 @@ function ShoppingCartProvider({ children }) {
             closeCheckoutSideMenu,
             order,
             setOrder,
+            preOrder,
+            setPreOrder,
             items,
             setItems,
             searchByTitle,
