@@ -40,13 +40,16 @@ function Home() {
                     {titlePage()}
                 </h1>
             </div>
-            <input type="text" placeholder="Search a product" className="border border-gray-400 rounded-full w-96 px-4 py-2 mb-8 focus:outline-gray-400"
+            <input type="text" placeholder="Search a product" className="border border-gray-400 rounded-full w-11/12  md:w-96 px-4 py-2 mb-8 focus:outline-gray-400"
                 onChange={(event) => context.setSearchByTitle(event.target.value)}
             />
-            <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg pb-20">
-                {renderView()}
+            <div className="w-full">
+                <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full px-4 sm:px-8 md:px-12 lg:px-32 pb-20">
+                    {renderView()}
+                </div>
             </div>
-            <ProductDetail></ProductDetail>
+
+            <ProductDetail />
         </Layout>
     )
 }

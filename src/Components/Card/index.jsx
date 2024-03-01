@@ -44,7 +44,7 @@ function Card({ data }) {
     }
     return (
         <div
-            className="bg-white cursor-pointer w-56 h-60 rounded-lg"
+            className="bg-white cursor-pointer h-60 rounded-lg"
             onClick={() => showProduct(data)}
         >
             <figure className="relative mb-2 w-full h-4/5">
