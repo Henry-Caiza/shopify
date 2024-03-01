@@ -42,7 +42,7 @@ function SignIn() {
 
     const renderLogIn = () => {
         return (
-            <div className='flex flex-col w-80'>
+            <div className='flex flex-col w-full'>
                 <div className=' flex flex-col gap-2'>
                     <p>
                         <span >Email: </span>
@@ -77,7 +77,7 @@ function SignIn() {
 
     const renderCreateUserInfo = () => {
         return (
-            <form ref={form} className='flex flex-col gap-4 w-80'>
+            <form ref={form} className='flex flex-col gap-4 w-full'>
                 <div className='flex flex-col gap-1'>
                     <label htmlFor="name" className='text-sm'>Your name:</label>
                     <input type="text"
@@ -126,14 +126,11 @@ function SignIn() {
 
     return (
         <Layout>
-
-            <div className='w-1/3 h-auto mt-10 bg-orange-600/40 rounded-lg flex flex-col justify-center items-center'>
+            <div className='w-11/12 sm:w-1/2 lg:w-2/6 h-auto mt-10 bg-orange-600/40 rounded-lg flex flex-col justify-center items-center px-4 py4 md:px-8 md:py-6'>
                 <h1 className='w-80 font-medium text-xl text-center text-orange-950 mt-6 mb-3'>Welcome</h1>
                 <hr className=' border border-orange-600/20 w-11/12 mb-3' />
                 {renderView()}
             </div>
-
-
         </Layout>
     )
 }
