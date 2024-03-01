@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ShoppingCartIcon, XMarkIcon, Bars4Icon } from '@heroicons/react/24/solid'
 
@@ -20,12 +20,15 @@ function Navbar() {
     const noAccountInLocalStorage = parsedAccount ? Object.keys(parsedAccount).length === 0 : true
     const noAccountInLocalState = context.account ? Object.keys(context.account).length === 0 : true
     const hasUserAnAccount = !noAccountInLocalState || !noAccountInLocalStorage
-
+    useEffect(() => {
+        renderView()
+    }, [])
     const handleSignOut = () => {
         const stringifiedSignOut = JSON.stringify(true)
         localStorage.setItem('sign-out', stringifiedSignOut)
         context.setSignOut(true)
     }
+
 
     const renderView = () => {
         if (hasUserAnAccount && !isUserSignOut) {
