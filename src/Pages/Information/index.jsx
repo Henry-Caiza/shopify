@@ -62,8 +62,8 @@ function MyInformation() {
 
     return (
         <Layout>
-            <div className="w-3/4 flex gap-12">
-                <div className="w-3/4 flex flex-col gap-4 border py-8 px-16 rounded-3xl border-secondaryyellow/20 bg-white">
+            <div className="w-full px-4 lg:px-0 lg:w-3/4 flex flex-col md:flex-row gap-12">
+                <div className="w-full lg:w-3/4 flex flex-col gap-4 border py-6 lg:py-8 px-4 lg:px-16 rounded-3xl border-secondaryyellow/20 bg-white order-2 md:order-1">
                     <div className="w-full">
                         <h2 className="text-xl font-semibold text-black">Contact information:</h2>
                     </div>
@@ -119,7 +119,7 @@ function MyInformation() {
                             </div>
                         </form>
                     </div>
-                    <div className="flex mt-4 z-10 border px-16 py-8">
+                    <div className="flex mt-4 z-0 border px-4 pt-6 lg:px-16 lg:py-8">
                         <p className='w-1/4 font-semibold'>Pagar con:</p>
                         <div className='w-3/4 mx-auto'>
 
@@ -151,10 +151,9 @@ function MyInformation() {
                                 />
                             </PayPalScriptProvider>
                         </div>
-
                     </div>
                 </div>
-                <div className='w-1/4'>
+                <div className='w-full lg:w-1/4 order-1 md:order-2'>
                     <h3 className="font-semibold text-lg border-b text-center">Pedido</h3>
                     <div className='flex flex-col mt-4'>
                         {context.preOrder?.[index]?.products.map((product) => (
